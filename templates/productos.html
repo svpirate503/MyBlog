@@ -1,0 +1,19 @@
+<h1>Productos disponibles.</h1>
+
+
+{% for producto in productos %}
+
+<div style="margin:50px;padding-top: 80px;">
+
+
+<img src="{{ producto.image.url }}" width="200" height="100">
+<h2>{{ producto.title }}</h2>
+<h2><a href="{% url 'paypal_proccess' %}">Buy now</a></h2>
+<p style="font-family:courier">Precio: ${{ producto.price }}</p>
+{{ producto.description }}
+	
+
+
+</div>
+
+{% endfor %}
